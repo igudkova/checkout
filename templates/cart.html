@@ -1,0 +1,22 @@
+<ul>
+    <li ng-repeat="item in cart" class="pure-u-1-3">
+        <div class="item">
+            <img ng-src="data/rsc/{{item.id}}.jpg"></a>
+            <div class="name">{{item.name}}&nbsp;&nbsp;${{item.price}}</div>        
+            <div class="controls">
+                <a ng-click="decrease($index)" class="pure-button item">
+                  <i class="icon-minus"></i>
+                </a> 
+                <input type="text" ng-model="item.num" readonly/>
+                <a ng-click="increase($index)" class="pure-button item">
+                  <i class="icon-plus"></i>
+                </a> 
+
+                <a ng-click="delete($index)" class="pure-button item">
+                  <i class="icon-trash icon-large"></i>
+                </a>
+            </div>
+        </div>    
+    </li>
+</ul>
+<div class="total">Total: ${{total}}</div>

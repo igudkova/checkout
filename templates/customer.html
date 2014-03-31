@@ -1,0 +1,16 @@
+<form name="customerForm" class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-control-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" ng-model="customer.name" required>
+            <div ng-show="customerForm.name.$dirty && customerForm.name.$error.required" class="error">name is required</div>
+        </div>
+        
+        <div class="pure-control-group">
+            <label for="email">Email</label>
+            <input name="email" ng-model="customer.email" type="email" ng-pattern="/.+@.+\..+/i" required>
+            <div ng-show="customerForm.email.$dirty && customerForm.email.$error.required" class="error">email is required</div> 
+            <div ng-show="customerForm.email.$dirty && customerForm.email.$invalid"  class="error">email is invalid</div> 
+        </div>
+    </fieldset>
+</form>

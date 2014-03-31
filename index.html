@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+    
+  <title>Checkout</title>
+    
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="css/app.css">    
+
+  <script src="lib/angular.js"></script>
+  <script src="lib/angular-resource.js"></script>    
+  <script src="lib/angular-route.js"></script>    
+  <script src="js/app.js"></script>     
+  <script src="js/directives.js"></script>
+  <script src="js/services/customer.js"></script>
+  <script src="js/services/cart.js"></script>        
+  <script src="js/controllers/cartController.js"></script>
+  <script src="js/controllers/confirmationController.js"></script>
+  <script src="js/controllers/customerController.js"></script>  
+  <script src="js/controllers/progressController.js"></script>    
+</head>
+<body ng-app="checkout">
+    <div>
+        <div ng-controller="progressController" class="progress">
+            <a href="#/cart" class="pure-button pure-u-1-5">
+                <i class="icon-shopping-cart icon-large"></i>
+                &nbsp;&nbsp;1. Cart
+            </a><!--        
+         --><a href="#/customer" class="pure-button pure-u-1-5" ng-class="{'pure-button-disabled': !cartValid}">
+                <i class="icon-list icon-large"></i>
+                &nbsp;&nbsp;2. Customer Details
+            </a><!--        
+         --><a href="#/confirmation" class="pure-button pure-u-1-5" ng-class="{'pure-button-disabled': !cartValid || !customerValid}">
+                <i class="icon-check icon-large"></i>
+                &nbsp;&nbsp;3. Confirmation
+            </a>
+        </div>
+        <div ng-view></div>
+    </div>    
+</body>
+</html>
