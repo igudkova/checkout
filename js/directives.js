@@ -12,4 +12,4 @@ directives.directive('ngConfirmClick', function () {
                 });
             }
         };
-    })
+    });

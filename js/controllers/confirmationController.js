@@ -8,7 +8,9 @@ controllers.controller('confirmationController', ['$scope', '$location', 'Cart',
       
     $scope.order = function () {
         Cart.cleanup();
-        Customer.cleanup();alert(Customer.get());
-        $location.path("#/cart");
+        Customer.cleanup();
+        $scope.$apply(function() {
+          $location.path('/cart');
+        });
     };
   }]);
