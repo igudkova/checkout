@@ -21,7 +21,7 @@ services.factory('Cart', ['$resource',
     }
       
     function isValid() {
-        return getTotal() > 0;
+        return items.length > 0;
     }
         
     function cleanup() {
